@@ -1,0 +1,6 @@
+[submodule "Goh19"]
+	path = Goh19
+	url = https://github.com/agohr/deep_speck.git
+[submodule "CSYY22"]
+	path = CSYY22
+	url = https://github.com/AI-Lab-Y/ND_mc.git
