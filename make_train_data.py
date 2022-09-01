@@ -21,7 +21,7 @@ def convert_to_binary(arr, n_words, word_size):
     return x
 
 
-def make_train_data(n_samples, cipher, diff, calc_back=0, y=None):
+def make_train_data(n_samples, cipher, diff, calc_back=0, y=None, additional_conditions=None):
     """
     Generates data for the differential scenario
     :param n_samples: The number of samples
@@ -39,6 +39,8 @@ def make_train_data(n_samples, cipher, diff, calc_back=0, y=None):
     # draw keys and plaintexts
     keys = cipher.draw_keys(n_samples)
     pt0 = cipher.draw_plaintexts(n_samples)
+    if additional_conditions is not None:
+        pt0 = additional_conditions(pt0)
     pt1 = pt0 ^ np.array(diff, dtype=cipher.word_dtype)[:, np.newaxis]
     # replace plaintexts in pt1 with random ones if label is 0
     num_rand_samples = np.sum(y == 0)
