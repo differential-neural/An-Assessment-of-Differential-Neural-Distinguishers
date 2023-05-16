@@ -1,7 +1,7 @@
 from tensorflow.keras.models import load_model
 
 from cipher.simon import Simon
-from make_train_data import make_train_data, make_real_differences_data, make_mult_pairs_data
+from make_data import make_train_data, make_real_differences_data, make_mult_pairs_data
 from eval import evaluate, evaluate_mult_pairs
 
 n_samples = 10**7

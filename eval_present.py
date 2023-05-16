@@ -1,7 +1,7 @@
 from tensorflow.keras.models import load_model
 
 from cipher.present import Present
-from make_train_data import make_train_data, make_real_differences_data, make_mult_pairs_data
+from make_data import make_train_data, make_real_differences_data, make_mult_pairs_data
 from eval import evaluate, evaluate_mult_pairs
 
 n_samples = 10**7
@@ -76,3 +76,22 @@ if __name__ == "__main__":
         present = Present(n_rounds=r)
         x, y = make_train_data(n_samples, present, in_diff)
         evaluate(net7, x, y)
+
+    print("### Evaluating Present neural distinguishers on more rounds than they were trained on and combining scores ###")
+    print("Trained for 6 rounds:")
+    for r in range(7, 11):
+        print(f'Evaluation on {r}-round Present:')
+        present = Present(n_rounds=r)
+        for pairs in [1, 2, 4, 8, 16]:
+            print(f'{pairs} pairs:')
+            x, y = make_mult_pairs_data(n_samples_mult_pairs, present, in_diff, n_pairs=pairs)
+            evaluate_mult_pairs(net6, present, x, y, n_pairs=pairs)
+    print("Trained for 7 rounds:")
+    for r in range(8, 11):
+        print(f'Evaluation on {r}-round Present:')
+        present = Present(n_rounds=r)
+        for pairs in [1, 2, 4, 8, 16]:
+            print(f'{pairs} pairs:')
+            x, y = make_mult_pairs_data(n_samples_mult_pairs, present, in_diff, n_pairs=pairs)
+            evaluate_mult_pairs(net7, present, x, y, n_pairs=pairs)
+

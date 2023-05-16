@@ -8,7 +8,7 @@ from cipher.present import Present
 from cipher.simon import Simon
 from cipher.skinny import Skinny
 from cipher.speck import Speck
-from make_train_data import make_train_data
+from make_data import make_train_data
 
 n_samples = 10**7
 significance_level = 0.01

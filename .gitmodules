@@ -1,6 +1,9 @@
-[submodule "Goh19"]
+[submodule "deep_speck"]
 	path = Goh19
 	url = https://github.com/agohr/deep_speck.git
-[submodule "CSYY22"]
+[submodule "CSYY21"]
 	path = CSYY22
 	url = https://github.com/AI-Lab-Y/ND_mc.git
+[submodule "LLS+23"]
+	path = LLS+23
+	url = https://github.com/JIN-smile/Improved-Related-key-Differential-based-Neural-Distinguishers.git

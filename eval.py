@@ -13,6 +13,7 @@ def evaluate(net, X, Y):
     tpr = np.sum(Zbin[Y == 1]) / n1
     tnr = np.sum(Zbin[Y == 0] == 0) / n0
     print("Accuracy: ", acc, "TPR: ", tpr, "TNR: ", tnr, "MSE:", mse)
+    return acc
 
 
 def evaluate_mult_pairs(net, cipher, x, y, n_pairs=1):
@@ -39,3 +40,4 @@ def evaluate_mult_pairs(net, cipher, x, y, n_pairs=1):
     tpr = np.sum(z_bin[y == 1]) / n1
     tnr = np.sum(z_bin[y == 0] == 0) / n0
     print("Accuracy: ", acc, "TPR: ", tpr, "TNR: ", tnr, "MSE:", mse)
+    return acc

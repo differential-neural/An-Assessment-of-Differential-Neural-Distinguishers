@@ -2,4 +2,6 @@
 __pycache__
 biases_*.svg
 random_response_present_7_rounds.npy
+ZWWW22/*
+!ZWWW22/.gitkeep
 

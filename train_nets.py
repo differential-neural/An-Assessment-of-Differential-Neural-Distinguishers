@@ -7,7 +7,7 @@ from tensorflow.keras.layers import Dense, Conv1D, Input, Reshape, Permute, Add,
 from tensorflow.keras.regularizers import l2
 
 from lib.CConv1D import CConv1D
-from make_train_data import make_train_data
+from make_data import make_train_data
 
 # +++ Based on train_nets.py by Gohr +++
 

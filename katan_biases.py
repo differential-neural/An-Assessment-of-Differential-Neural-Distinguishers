@@ -3,7 +3,7 @@ import click
 
 from tensorflow.keras.models import load_model, Model
 from cipher.katan import Katan
-from make_train_data import make_train_data
+from make_data import make_train_data
 from scipy import stats
 from os import urandom
 
